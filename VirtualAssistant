@@ -33,6 +33,7 @@ def response(text):
 
 
 #defining a function to work for whatever we will command our assistant
+command = 'Let's get started'
 def my_input():
     try:
         #Defining the source of our command
@@ -45,7 +46,8 @@ def my_input():
 
             #To store our message
             voice = listener.listen(mic)
-
+            
+            global command
             command = listener.recognize_google(voice)
             command = command.lower()
             if 'april' in command:
